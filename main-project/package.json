@@ -1,0 +1,31 @@
+{
+  "name": "main-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "install:all": "yarn install && cd ../main-project && yarn install && cd ../sub-app-cms && yarn install && cd ../sub-app-sms && yarn install && cd ../sub-app-system && yarn install",
+    "start": "concurrently \"yarn start:main\" \"yarn start:cms\" \"yarn start:sms\" \"yarn start:system\"",
+    "start:main": "parcel index.html --no-cache --port 5100",
+    "start:cms": "cd ../sub-app-cms && yarn serve:single-spa",
+    "start:sms": "cd ../sub-app-sms && yarn serve:single-spa",
+    "start:system": "cd ../sub-app-system && yarn start",
+    "build": "concurrently \"yarn build:main\" \"yarn build:cms\" \"yarn build:sms\" \"yarn build:system\"",
+    "build:main": "parcel index.html --no-cache --port 6200",
+    "build:cms": "cd ../sub-app-cms && yarn build",
+    "build:sms": "cd ../sub-app-sms && yarn build",
+    "build:system": "cd ../sub-app-system && yarn build"
+  },
+  "dependencies": {
+    "antd": "^3.26.11",
+    "qiankun": "^1.3.14",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "zone.js": "^0.10.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}

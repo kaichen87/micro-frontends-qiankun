@@ -1,0 +1,65 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+/src/assets/alain-*.less
+
+# dependencies
+/node_modules
+/yarn.lock
+
+/main-project/node_modules
+/sub-app-cms/node_modules
+/sub-app-sms/node_modules
+/sub-app-system/node_modules
+
+/main-project/dist
+/sub-app-cms/dist
+/sub-app-sms/dist
+/sub-app-system/dist
+
+/main-project/out-tsc
+/sub-app-cms/out-tsc
+/sub-app-sms/out-tsc
+/sub-app-system/out-tsc
+
+/main-project/tmp
+/sub-app-cms/tmp
+/sub-app-sms/tmp
+/sub-app-system/tmp
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+yarn-error.log
+/_all.less
+
+# e2e
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
