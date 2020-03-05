@@ -1,4 +1,4 @@
-// const singleSpaAngularWebpack = require('single-spa-angular/lib/webpack').default
+const singleSpaAngularWebpack = require('single-spa-angular/lib/webpack').default
 
 // module.exports = (angularWebpackConfig, options) => {
 //   const singleSpaWebpackConfig = singleSpaAngularWebpack(angularWebpackConfig, options)
@@ -9,7 +9,9 @@
 
 const webpackMerge = require('webpack-merge');
 
-module.exports = (config, options) => {
+module.exports = (angularWebpackConfig, options) => {
+  // const singleSpaWebpackConfig = singleSpaAngularWebpack(angularWebpackConfig, options);
+
   const singleSpaConfig = {
     output: {
       library: 'sub-app-cms',
@@ -19,6 +21,6 @@ module.exports = (config, options) => {
       'zone.js': 'Zone'
     }
   };
-  const mergedConfig = webpackMerge.smart(config, singleSpaConfig);
+  const mergedConfig = webpackMerge.smart(angularWebpackConfig, singleSpaConfig);
   return mergedConfig;
 };
