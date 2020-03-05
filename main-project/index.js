@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import MainPage from './pages/MainPage';
 import SubAppContent from './pages/SubAppContent';
 import 'zone.js';
 import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start } from 'qiankun';
+import App from './App';
 
 function render() {
   const container = document.getElementById('container');
-  ReactDom.render(<MainPage />, container);
+  ReactDom.render(<App />, container);
 }
 
 function getActiveRule(routerPrefix) {
@@ -75,7 +75,7 @@ registerMicroApps(
   },
 );
 
-setDefaultMountApp('/cms');
+// setDefaultMountApp('/cms');
 
 runAfterFirstMounted(() => console.info('first app mounted'));
 
